@@ -13,9 +13,6 @@ namespace designByContractAssignment2
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
         }
     }
 
@@ -24,7 +21,7 @@ namespace designByContractAssignment2
         private String name;
         public void move(double amount, Account source, Account target)
         {
-            Contra
+            Contract.EnsuresOnThrow<Exception>(source.balance >= amount);
             source.balance -= amount;
             target.balance += amount;
         }
